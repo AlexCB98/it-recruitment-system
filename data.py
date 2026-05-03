@@ -90,7 +90,7 @@ candidates = [
         'test_score': 88
     },
     {
-        'name': 'Kevin O\'Brien',
+        'name': 'Kevin Brien',
         'age': 30,
         'experience_years': 6,
         'github_projects': 18,

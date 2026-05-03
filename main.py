@@ -23,3 +23,11 @@ def good_communication(e_level, test_s):
     else:
         return False
 
+def final_decision(score, affordable, communication):
+
+    if score >= 80 and affordable and communication:
+        return 'Hire'
+    elif score >= 80 and communication:
+        return 'Interview'
+    else:
+        return 'Reject'

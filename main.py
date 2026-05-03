@@ -6,7 +6,7 @@ def format_data(candidat):
     experience = candidat['experience_years']
     score = candidat['test_score']
 
-    return f'Name: {name}\n Age: {age}\n Experience: {experience}\n Score: {score}'
+    return f'- Name: {name}\n- Age: {age}\n- Experience: {experience}\n- Score: {score}\n'
 
 def technic_score(score, projects, experience):
     return (score * 0.5) + (projects * 2) + (experience * 5)
@@ -31,3 +31,19 @@ def final_decision(score, affordable, communication):
         return 'Interview'
     else:
         return 'Reject'
+
+
+for participant in candidates:
+
+    score = technic_score(participant['test_score'],
+                          participant['github_projects'],
+                          participant['experience_years'])
+
+    affordable = is_affordable(participant['salary_expectation'])
+
+    communication = good_communication(participant['english_level'],
+                                       participant['test_score'])
+
+    decision = final_decision(score,affordable, communication)
+
+    print(f'{format_data(participant)}\n --> {decision} \n')
